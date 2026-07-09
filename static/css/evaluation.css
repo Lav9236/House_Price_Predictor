@@ -1,0 +1,336 @@
+/* ==========================================
+   Evaluation Section
+========================================== */
+
+.evaluation-section{
+
+    padding:80px 0;
+
+    background:#f8f9fa;
+
+}
+
+
+/* ==========================================
+   Section Title
+========================================== */
+
+.section-title h2{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    color:#212529;
+
+}
+
+.section-title p{
+
+    color:#6c757d;
+
+    font-size:1.05rem;
+
+    margin-top:10px;
+
+}
+
+
+/* ==========================================
+   Metric Cards
+========================================== */
+
+.metric-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+    border-top:5px solid #0d6efd;
+
+}
+
+.metric-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.metric-card h5{
+
+    color:#6c757d;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.metric-card h2{
+
+    color:#0d6efd;
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   Dashboard Cards
+========================================== */
+
+.dashboard-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-top:40px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.dashboard-card h3{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================
+   Model Comparison Table
+========================================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead th{
+
+    background:#0d6efd !important;
+
+    color:#ffffff !important;
+
+    text-align:center;
+
+    font-weight:700;
+
+    vertical-align:middle;
+
+    border-color:#0d6efd !important;
+
+}
+
+.table tbody td{
+
+    text-align:center;
+
+    vertical-align:middle;
+
+}
+
+.model-table thead th{
+
+    background:#0d6efd !important;
+
+    color:#fff !important;
+
+}
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+.metric-card{
+
+margin-bottom:20px;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+}
+
+/* ==========================================
+   Status Badges
+========================================== */
+
+.badge{
+
+    font-size:.85rem;
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   Graph Description
+========================================== */
+
+.graph-description{
+
+    color:#6c757d;
+
+    font-size:1rem;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   Dashboard Images
+========================================== */
+
+.dashboard-card img{
+
+    display:block;
+
+    width:80%;
+
+    max-width:850px;
+
+    margin:30px auto;
+
+    border-radius:15px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.dashboard-card img:hover{
+
+    transform:scale(1.01);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+/* ==========================================
+   AI Insight Box
+========================================== */
+
+.graph-insight{
+
+    margin-top:25px;
+
+    background:#eef5ff;
+
+    border-left:5px solid #0d6efd;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    color:#495057;
+
+    line-height:1.8;
+
+}
+
+.graph-insight strong{
+
+    color:#0d6efd;
+
+}
+
+/* ==========================================
+   Performance Summary
+========================================== */
+
+.summary-box{
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    margin-top:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.summary-box h5{
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.summary-box ul{
+
+    padding-left:20px;
+
+}
+
+.summary-box li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+/* ==========================================
+   Model Information
+========================================== */
+
+.dashboard-card table{
+
+    margin-top:20px;
+
+}
+
+.dashboard-card th{
+
+    width:45%;
+
+    background:#f8f9fa;
+
+}
+
+.dashboard-card td{
+
+    font-weight:500;
+
+}

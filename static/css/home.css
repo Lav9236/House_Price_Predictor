@@ -1,0 +1,657 @@
+/* ===================================
+Hero Section
+=================================== */
+
+.hero{
+
+    padding:100px 0;
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:56px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+    line-height:1.2;
+
+}
+
+.hero h1 span{
+
+    color:#2563EB;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    color:#64748B;
+
+    line-height:1.8;
+
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+
+}
+
+.hero-buttons .btn{
+
+    margin-right:15px;
+
+}
+
+.hero-image{
+
+    max-width:100%;
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .hero{
+
+        text-align:center;
+
+        padding:80px 0;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .hero-image{
+
+        margin-top:50px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+}
+
+/* ===================================
+Statistics Section
+=================================== */
+
+.statistics{
+
+    padding:70px 0;
+
+    background:white;
+
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat-card i{
+
+    font-size:50px;
+
+    color:#2563EB;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h2{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+}
+
+.stat-card p{
+
+    color:#64748B;
+
+    margin-top:10px;
+
+    font-size:17px;
+
+}
+
+/* ===================================
+Workflow Section
+=================================== */
+
+.workflow{
+
+    padding:90px 0;
+
+    background:#F8FAFC;
+
+}
+
+.workflow-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.workflow-step{
+
+    width:180px;
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.workflow-step:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.workflow-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    background:#DBEAFE;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+.workflow-icon i{
+
+    font-size:30px;
+
+    color:#2563EB;
+
+}
+
+.workflow-step h5{
+
+    font-weight:600;
+
+    color:#1E293B;
+
+}
+
+.workflow-step p{
+
+    font-size:14px;
+
+    color:#64748B;
+
+    margin-top:10px;
+
+}
+
+.workflow-arrow{
+
+    font-size:30px;
+
+    color:#2563EB;
+
+}
+
+@media(max-width:992px){
+
+    .workflow-container{
+
+        flex-direction:column;
+
+    }
+
+    .workflow-arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+}
+
+/* ===================================
+Features Section
+=================================== */
+
+.features{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+.feature-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:35px 30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
+
+}
+
+.feature-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.feature-icon i{
+
+    font-size:34px;
+
+    color:#ffffff;
+
+}
+
+.feature-card h4{
+
+    font-weight:700;
+
+    color:#1E293B;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* ===================================
+Machine Learning Pipeline
+=================================== */
+
+.pipeline{
+
+    padding:100px 0;
+
+    background:#F8FAFC;
+
+}
+
+.pipeline-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.pipeline-box{
+
+    width:150px;
+
+    min-height:160px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.35s;
+
+    padding:20px;
+
+}
+
+.pipeline-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.pipeline-box i{
+
+    font-size:38px;
+
+    color:#2563EB;
+
+    margin-bottom:18px;
+
+}
+
+.pipeline-box h5{
+
+    font-weight:600;
+
+    font-size:18px;
+
+    color:#1E293B;
+
+}
+
+.pipeline-line{
+
+    width:40px;
+
+    height:4px;
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+.highlight{
+
+    background:#2563EB;
+
+}
+
+.highlight i{
+
+    color:white;
+
+}
+
+.highlight h5{
+
+    color:white;
+
+}
+
+.success{
+
+    background:#10B981;
+
+}
+
+.success i{
+
+    color:white;
+
+}
+
+.success h5{
+
+    color:white;
+
+}
+
+@media(max-width:992px){
+
+    .pipeline-wrapper{
+
+        flex-direction:column;
+
+    }
+
+    .pipeline-line{
+
+        width:4px;
+
+        height:40px;
+
+    }
+
+}
+
+/* ===================================
+Performance Section
+=================================== */
+
+.performance{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+.performance-card{
+
+    background:#ffffff;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.performance-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.performance-card i{
+
+    font-size:45px;
+
+    color:#2563EB;
+
+    margin-bottom:20px;
+
+}
+
+.performance-card h3{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+}
+
+.performance-card p{
+
+    color:#64748B;
+
+    margin-top:10px;
+
+}
+
+.graph-preview{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.graph-preview h4{
+
+    margin-bottom:20px;
+
+    color:#1E293B;
+
+}
+
+.graph-preview img{
+
+    width:100%;
+
+    border-radius:12px;
+
+}

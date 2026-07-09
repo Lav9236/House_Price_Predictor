@@ -1,0 +1,543 @@
+{% extends "base.html" %}
+
+{% block title %}
+Model Evaluation
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/evaluation.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="evaluation-section">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="section-title text-center mb-5">
+
+            <h2>Model Evaluation Dashboard</h2>
+
+            <p>
+
+                Analyze the performance of our Machine Learning
+                House Price Prediction Model.
+
+            </p>
+
+        </div>
+
+        <!-- ============================= -->
+        <!-- Metric Cards -->
+        <!-- ============================= -->
+
+        <div class="row g-4">
+
+            <!-- R2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="metric-card">
+
+                    <h5>R² Score</h5>
+
+                    <h2>
+
+                        {{ metrics["Stacking Regressor"]["R2"] }}
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <!-- RMSE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="metric-card">
+
+                    <h5>RMSE</h5>
+
+                    <h2>
+
+                        {{ metrics["Stacking Regressor"]["RMSE"] }}
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <!-- MAE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="metric-card">
+
+                    <h5>MAE</h5>
+
+                    <h2>
+
+                        {{ metrics["Stacking Regressor"]["MAE"] }}
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <!-- Best Model -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="metric-card">
+
+                    <h5>Best Model</h5>
+
+                    <h2>
+
+                        Stacking
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- Model Comparison -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card">
+
+            <h3>
+
+                <i class="bi bi-table"></i>
+
+                Model Comparison
+
+            </h3>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle model-table">
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Model</th>
+                        <th>R² Score</th>
+                        <th>RMSE</th>
+                        <th>MAE</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for model_name, values in metrics.items() %}
+
+                    <tr>
+
+                        <td>
+
+                            {% if model_name == "Stacking Regressor" %}
+
+                            <strong>{{ model_name }}</strong>
+
+                            <span class="badge bg-success ms-2">
+
+                            Best
+
+                        </span>
+
+                            {% else %}
+
+                            {{ model_name }}
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {{ values.R2 }}
+
+                        </td>
+
+                        <td>
+
+                            {{ values.RMSE }}
+
+                        </td>
+
+                        <td>
+
+                            {{ values.MAE }}
+
+                        </td>
+
+                        <td>
+
+                            {% if model_name == "Stacking Regressor" %}
+
+                            <span class="badge bg-success">
+
+                            Selected
+
+                        </span>
+
+                            {% else %}
+
+                            <span class="badge bg-secondary">
+
+                            Compared
+
+                        </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- Actual vs Predicted -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card">
+
+            <h3>
+
+                <i class="bi bi-graph-up-arrow"></i>
+
+                Actual vs Predicted Prices
+
+            </h3>
+
+            <p class="graph-description">
+
+                This graph compares the actual house prices with the
+                prices predicted by the Stacking Regressor model.
+
+                A prediction close to the diagonal line indicates
+                better model accuracy.
+
+            </p>
+
+            <img
+
+                    src="{{ url_for('static', filename='images/actual_vs_predicted.png') }}"
+
+                    class="img-fluid"
+
+                    alt="Actual vs Predicted">
+
+            <div class="graph-insight">
+
+                <strong>Insight :</strong>
+
+                Most predicted values closely follow the actual values,
+                showing that the model has learned the relationship
+                between the features and house prices effectively.
+
+            </div>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- Error Distribution -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card">
+
+            <h3>
+
+                <i class="bi bi-bar-chart-line-fill"></i>
+
+                Prediction Error Distribution
+
+            </h3>
+
+            <p class="graph-description">
+
+                This histogram shows how prediction errors are
+                distributed across all test samples.
+
+                Smaller errors indicate better prediction performance.
+
+            </p>
+
+            <img
+
+                    src="{{ url_for('static', filename='images/error_distribution.png') }}"
+
+                    class="img-fluid"
+
+                    alt="Error Distribution">
+
+            <div class="graph-insight">
+
+                <strong>Insight :</strong>
+
+                Most prediction errors are concentrated in a lower
+                range, indicating consistent and reliable predictions.
+
+            </div>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- Feature Importance -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card">
+
+            <h3>
+
+                <i class="bi bi-diagram-3-fill"></i>
+
+                Feature Importance
+
+            </h3>
+
+            <p class="graph-description">
+
+                This chart highlights which features contribute the
+                most to predicting house prices.
+
+            </p>
+
+            <img
+
+                    src="{{ url_for('static', filename='images/feature_importance.png') }}"
+
+                    class="img-fluid"
+
+                    alt="Feature Importance">
+
+            <div class="graph-insight">
+
+                <strong>Insight :</strong>
+
+                Highly ranked features have the greatest influence on
+                the predicted house price and play a key role in the
+                model's decision-making process.
+
+            </div>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- AI Performance Summary -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card mt-5">
+
+            <h3>
+
+                <i class="bi bi-clipboard-data-fill"></i>
+
+                AI Performance Summary
+
+            </h3>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="summary-box">
+
+                        <h5>
+
+                            <i class="bi bi-check-circle-fill text-success"></i>
+
+                            Model Strengths
+
+                        </h5>
+
+                        <ul>
+
+                            <li>High prediction accuracy with excellent R² score.</li>
+
+                            <li>Low Mean Absolute Error (MAE).</li>
+
+                            <li>Low Root Mean Squared Error (RMSE).</li>
+
+                            <li>Stacking Regressor outperformed all individual models.</li>
+
+                            <li>Suitable for practical house price estimation.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="summary-box">
+
+                        <h5>
+
+                            <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+
+                            Model Limitations
+
+                        </h5>
+
+                        <ul>
+
+                            <li>Prediction quality depends on training dataset quality.</li>
+
+                            <li>Cannot estimate prices for unseen feature patterns accurately.</li>
+
+                            <li>Model should be retrained when new market data becomes available.</li>
+
+                            <li>External economic factors are not included.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- Model Information -->
+        <!-- ===================================== -->
+
+        <div class="dashboard-card mt-5">
+
+            <h3>
+
+                <i class="bi bi-cpu-fill"></i>
+
+                Model Information
+
+            </h3>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <table class="table table-bordered">
+
+                        <tbody>
+
+                        <tr>
+
+                            <th>Algorithm</th>
+
+                            <td>Stacking Regressor</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Final Estimator</th>
+
+                            <td>Linear Regression</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Feature Scaling</th>
+
+                            <td>StandardScaler</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Train / Test Split</th>
+
+                            <td>80% / 20%</td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <table class="table table-bordered">
+
+                        <tbody>
+
+                        <tr>
+
+                            <th>Base Model 1</th>
+
+                            <td>Linear Regression</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Base Model 2</th>
+
+                            <td>Random Forest</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Base Model 3</th>
+
+                            <td>XGBoost</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Target Variable</th>
+
+                            <td>SalePrice</td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about-section py-5">
+
+    <div class="container">
+
+        <!-- ========================= -->
+        <!-- Heading -->
+        <!-- ========================= -->
+
+        <div class="text-center mb-5">
+
+            <h1>About This Project</h1>
+
+            <p class="text-muted">
+
+                AI Powered House Price Prediction using Machine Learning.
+
+            </p>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Project Objective -->
+        <!-- ========================= -->
+
+        <div class="card shadow-sm mb-5">
+
+            <div class="card-body">
+
+                <h3>Project Objective</h3>
+
+                <p>
+
+                    This project predicts house prices using multiple
+                    Machine Learning algorithms and a Stacking Regressor.
+                    Users can estimate property prices, analyze model
+                    performance and understand the dataset through an
+                    interactive web application.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Workflow -->
+        <!-- ========================= -->
+
+        <div class="card shadow-sm mb-5">
+
+            <div class="card-body">
+
+                <h3>Project Workflow</h3>
+
+                <div class="row text-center mt-4">
+
+                    <div class="col-md-3">
+
+                        <h5>1️⃣ Data Collection</h5>
+
+                        <p>Load and preprocess dataset.</p>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h5>2️⃣ Model Training</h5>
+
+                        <p>Train multiple regression models.</p>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h5>3️⃣ Prediction</h5>
+
+                        <p>Generate house price predictions.</p>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h5>4️⃣ Evaluation</h5>
+
+                        <p>Compare model performance.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Models -->
+        <!-- ========================= -->
+
+        <div class="card shadow-sm mb-5">
+
+            <div class="card-body">
+
+                <h3>Machine Learning Models</h3>
+
+                <ul>
+
+                    <li>Linear Regression</li>
+
+                    <li>Random Forest Regressor</li>
+
+                    <li>XGBoost Regressor</li>
+
+                    <li>Stacking Regressor (Final Model)</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Technology -->
+        <!-- ========================= -->
+
+        <div class="card shadow-sm mb-5">
+
+            <div class="card-body">
+
+                <h3>Technology Stack</h3>
+
+                <div class="row text-center">
+
+                    <div class="col-md-3">Python</div>
+
+                    <div class="col-md-3">Flask</div>
+
+                    <div class="col-md-3">Scikit-learn</div>
+
+                    <div class="col-md-3">XGBoost</div>
+
+                    <div class="col-md-3">Pandas</div>
+
+                    <div class="col-md-3">NumPy</div>
+
+                    <div class="col-md-3">Bootstrap</div>
+
+                    <div class="col-md-3">JavaScript</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Future Improvements -->
+        <!-- ========================= -->
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h3>Future Improvements</h3>
+
+                <ul>
+
+                    <li>Interactive Charts</li>
+
+                    <li>Prediction History</li>
+
+                    <li>REST API</li>
+
+                    <li>Cloud Deployment</li>
+
+                    <li>Model Retraining</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static',
+filename='js/about.js') }}"></script>
+
+{% endblock %}
